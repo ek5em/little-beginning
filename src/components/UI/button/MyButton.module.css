@@ -1,0 +1,15 @@
+.myBtn {
+    background: yellowgreen;
+    cursor: pointer;
+    font-size: medium;
+    transition: .2s;
+}
+
+.myBtn:hover {
+    background: green;
+}
+
+.myBtn:active {
+    transform: translateY(2);
+    background: yellow;
+}

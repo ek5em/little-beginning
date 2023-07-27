@@ -1,0 +1,7 @@
+.myInput {
+    border-radius: 10px;
+    border: 1px groove tomato;
+    outline: none;
+    background: silver;
+    text-align: center;
+}
