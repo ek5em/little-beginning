@@ -1,4 +1,7 @@
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Post from "../post/Post";
+
+import './PostList.css'
 
 const PostList = ({ posts, remove }) => {
     return (
@@ -9,19 +12,27 @@ const PostList = ({ posts, remove }) => {
                 'display': 'flex',
                 'flexDirection': 'column',
             }}>
-                {posts.map((post, index) => {
-                    const { id, language: name, rate } = post;
-                    return (
-                        <Post
-                            remove={remove}
-                            id={id}
-                            key={id}
-                            name={name}
-                            rate={rate}
-                            number={index + 1}
-                        />
-                    )
-                })}
+                <TransitionGroup>
+                    {posts.map((post, index) => {
+                        const { id, language: name, rate } = post;
+                        return (
+                            <CSSTransition
+                                key={id}
+                                timeout={500}
+                                classNames="post"
+                            >
+                                <Post
+                                    remove={remove}
+                                    id={id}
+                                    key={id}
+                                    name={name}
+                                    rate={rate}
+                                    number={index + 1}
+                                />
+                            </CSSTransition>
+                        )
+                    })}
+                </TransitionGroup>
             </div>
         </div>
     )

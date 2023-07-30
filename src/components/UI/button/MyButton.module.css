@@ -3,6 +3,7 @@
     cursor: pointer;
     font-size: medium;
     transition: .2s;
+    margin: 3px;
 }
 
 .myBtn:hover {

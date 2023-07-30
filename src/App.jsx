@@ -3,6 +3,10 @@ import { useMemo, useState } from 'react';
 import PostList from './components/postList/PostList';
 import PostForm from './components/postForm/PostForm';
 import PostFilter from './components/postFilter/PostFilter';
+import MyModal from './components/myModal/MyModal';
+import MyButton from './components/UI/button/MyButton';
+
+import './App.css';
 
 const App = () => {
   const [posts, setPosts] = useState([
@@ -11,13 +15,15 @@ const App = () => {
     { id: 3, language: 'бб', rate: '3' },
   ]);
 
-  const [filter, setFilter] = useState({ sort: '', query: '' })
+  const [filter, setFilter] = useState({ sort: '', query: '' });
+
+  const [visible, setVisible] = useState(false);
 
   const sortedPosts = useMemo(() => {
     if (filter.sort) {
       return [...posts].sort((a, b) => {
         return a[filter.sort].localeCompare(b[filter.sort])
-      }); 
+      });
     } return posts;
   }, [filter.sort, posts]);
 
@@ -28,16 +34,28 @@ const App = () => {
 
   const createPost = (postInfo) => {
     setPosts([...posts, postInfo])
+    setVisible(false);
   }
 
   const removePost = (id) => {
     setPosts(posts.filter((post) => id !== post.id));
   }
 
+  const addLanguageHandler = () => {
+    setVisible(true);
+  }
+
   return (
     <div className="App">
-      <PostForm createPost={createPost} />
-      <hr />
+      <MyButton onClick={addLanguageHandler}>
+        Добавить язык
+      </MyButton>
+      <MyModal
+        visible={visible}
+        setVisible={setVisible}
+      >
+        <PostForm createPost={createPost} />
+      </MyModal>
       <PostFilter
         filter={filter}
         setFilter={setFilter}
