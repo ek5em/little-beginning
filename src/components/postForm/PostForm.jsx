@@ -5,27 +5,27 @@ import MyInput from "../UI/input/MyInput";
 
 const PostForm = ({ createPost }) => {
 
-    const [post, setPost] = useState({ language: '', rate: '' })
+    const [post, setPost] = useState({ title: '', body: '' })
 
     const addNewPost = (event) => {
         event.preventDefault();
         createPost({ id: Date.now(), ...post })
-        setPost({ language: '', rate: '' });
+        setPost({ title: '', body: '' });
     }
 
     return (
         <form>
             <MyInput
                 type="text"
-                placeholder='language'
-                value={post.language}
-                onChange={(event) => setPost({ ...post, language: event.target.value })}
+                placeholder='title'
+                value={post.title}
+                onChange={(event) => setPost({ ...post, title: event.target.value })}
             />
             <MyInput
                 type="text"
-                placeholder='rate'
-                value={post.rate}
-                onChange={(event) => setPost({ ...post, rate: event.target.value })}
+                placeholder='text'
+                value={post.body}
+                onChange={(event) => setPost({ ...post, body: event.target.value })}
             />
             <MyButton
                 onClick={addNewPost}>

@@ -11,6 +11,11 @@
 }
 
 .myBtn:active {
-    transform: translateY(2);
+    transform: scale(0.9);
     background: yellow;
+}
+
+.myBtn__selected {
+    background: yellow;
+    border: 2px solid black;
 }

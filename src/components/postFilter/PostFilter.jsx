@@ -11,8 +11,8 @@ const PostFilter = ({ filter, setFilter }) => {
             />
             <MySelect
                 options={[
-                    { value: 'language', title: 'Названию' },
-                    { value: 'rate', title: 'Рейтингу' }
+                    { value: 'body', title: 'Содержимому' },
+                    { value: 'title', title: 'Заголовку' }
                 ]
                 }
                 value={filter.sort}

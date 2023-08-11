@@ -1,0 +1,8 @@
+.posts-page>div {
+    justify-content: center;
+}
+
+.page__wrapper {
+    display: flex;
+    justify-content: center;
+}

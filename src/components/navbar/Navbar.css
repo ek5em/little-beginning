@@ -1,0 +1,15 @@
+.navbar {
+    display: flex;
+    width: 99vw;
+    height: 50px;
+    align-items: center;
+    background: gray;
+}
+
+.navbar__links {
+    margin-left: auto;
+}
+
+.navbar__links>a {
+    margin-right: 5px
+}

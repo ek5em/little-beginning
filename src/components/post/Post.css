@@ -1,8 +1,11 @@
 .post {
-    width: 500px;
-    border: 1px solid green;    
+    border: 1px solid green;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 15px;
+}
+
+.post__btns {
+    display: 'flex';
 }

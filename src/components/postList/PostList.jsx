@@ -13,8 +13,8 @@ const PostList = ({ posts, remove }) => {
                 'flexDirection': 'column',
             }}>
                 <TransitionGroup>
-                    {posts.map((post, index) => {
-                        const { id, language: name, rate } = post;
+                    {posts.map((post) => {
+                        const { id, title, body, userId } = post;
                         return (
                             <CSSTransition
                                 key={id}
@@ -24,10 +24,9 @@ const PostList = ({ posts, remove }) => {
                                 <Post
                                     remove={remove}
                                     id={id}
-                                    key={id}
-                                    name={name}
-                                    rate={rate}
-                                    number={index + 1}
+                                    body={body}
+                                    title={title}
+                                    userId={userId}
                                 />
                             </CSSTransition>
                         )
