@@ -1,0 +1,14 @@
+.comments__title {
+    display: flex;
+    justify-content: center;
+}
+
+.comment__user__info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment {
+    border: 1px solid olivedrab;
+    margin-top: 1px;
+}

@@ -1,22 +1,18 @@
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import Navbar from '../navbar/Navbar';
-import Error from '../../pages/error/Error';
-import Posts from '../../pages/posts/Posts';
-import About from '../../pages/about/About';
-import PostIdPage from '../../pages/postIdPage/PostIdPage';
+import { useContext } from "react";
+import { Route, Routes } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import { privateRoutes, publicRoutes } from "../../routes/index";
 
 const AppRouter = () => {
-    return (
-        <BrowserRouter>
-            <Navbar />
-            <Routes>
-                <Route path='/about' Component={About} />
-                <Route exact path='/posts' Component={Posts} />
-                <Route exact path='/posts/:id' Component={PostIdPage} />
-                <Route path='*' Component={Error} />
-                <Route exact path='/' Component={Posts} />
-            </Routes>
-        </BrowserRouter>
-    )
-}
+   const { isAuth } = useContext(AuthContext);
+   const routes = isAuth ? privateRoutes : publicRoutes;
+   return (
+      <Routes>
+         {routes.map((route) => {
+            const { path, exact, component } = route;
+            return <Route key={path} path={path} exact={exact} Component={component} />;
+         })}
+      </Routes>
+   );
+};
 export default AppRouter;

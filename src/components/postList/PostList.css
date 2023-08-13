@@ -1,17 +1,17 @@
 .post-enter {
-    transform: translateX(-100%);
+   transform: translateX(-100%);
 }
 
 .post-enter-active {
-    transform: translateX(0);
-    transition: .5s ease-in;
+   transform: translateX(0);
+   transition: 0.5s ease-in;
 }
 
 .post-exit {
-    transform: translateX(0);
+   transform: translateX(0);
 }
 
 .post-exit-active {
-    transform: translateX(-100%);
-    transition: 500ms ease-in;
+   transform: translateX(-100%);
+   transition: 500ms ease-in;
 }

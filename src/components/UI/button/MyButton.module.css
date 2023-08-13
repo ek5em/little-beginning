@@ -1,21 +1,21 @@
 .myBtn {
-    background: yellowgreen;
-    cursor: pointer;
-    font-size: medium;
-    transition: .2s;
-    margin: 3px;
+   background: yellowgreen;
+   cursor: pointer;
+   font-size: medium;
+   transition: 0.2s;
+   margin: 3px;
 }
 
 .myBtn:hover {
-    background: green;
+   background: green;
 }
 
 .myBtn:active {
-    transform: scale(0.9);
-    background: yellow;
+   transform: scale(0.9);
+   background: yellow;
 }
 
 .myBtn__selected {
-    background: yellow;
-    border: 2px solid black;
+   background: yellow;
+   border: 2px solid black;
 }

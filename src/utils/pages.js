@@ -1,4 +1,4 @@
 const getPageCount = (limit, totalPages) => {
-    return Math.ceil(totalPages / limit);
+   return Math.ceil(totalPages / limit);
 };
 export default getPageCount;

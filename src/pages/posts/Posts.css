@@ -1,8 +1,12 @@
-.posts-page>div {
-    justify-content: center;
+.posts-page {
+   width: 80vw;
+}
+
+.posts-page > div {
+   justify-content: center;
 }
 
 .page__wrapper {
-    display: flex;
-    justify-content: center;
+   display: flex;
+   justify-content: center;
 }
